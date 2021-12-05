@@ -12,7 +12,7 @@ namespace TestClass
         public void TestMethod1()
         {
             List<EmployeeDetails> employeeDetails = new List<EmployeeDetails>();
-            employeeDetails.Add(new EmployeeDetails(EmployeeId: 1, EmployeeName: "AAAAA", PhoneNumber: 123456789, Address: "ahmednagar", Department: "AA", Gender: "M", BasicPay: 2422242, Deduction: 43535, TaxablePay: 234324, IncomeTax: 424, NetPay: 555435)); ;
+            employeeDetails.Add(new EmployeeDetails(EmployeeId: 1, EmployeeName: "AAAAA", PhoneNumber: 123456789, Address: "ahemdabad", Department: "AA", Gender: "M", BasicPay: 2422242, Deduction: 43535, TaxablePay: 234324, IncomeTax: 424, NetPay: 555435)); ;
             employeeDetails.Add(new EmployeeDetails(EmployeeId: 2, EmployeeName: "BBBBB", PhoneNumber: 123456789, Address: "Satara", Department: "AA", Gender: "M", BasicPay: 2422242, Deduction: 43535, TaxablePay: 234324, IncomeTax: 424, NetPay: 555435));
             employeeDetails.Add(new EmployeeDetails(EmployeeId: 3, EmployeeName: "CCCCC", PhoneNumber: 123456789, Address: "Kolhapur", Department: "AA", Gender: "M", BasicPay: 2422242, Deduction: 43535, TaxablePay: 234324, IncomeTax: 424, NetPay: 555435));
             employeeDetails.Add(new EmployeeDetails(EmployeeId: 4, EmployeeName: "DDDDD", PhoneNumber: 123456789, Address: "Pune", Department: "AA", Gender: "M", BasicPay: 2422242, Deduction: 43535, TaxablePay: 234324, IncomeTax: 424, NetPay: 555435));
@@ -24,6 +24,10 @@ namespace TestClass
             DateTime stopDateTime = DateTime.Now;
             Console.WriteLine("Duration without thread: " + (stopDateTime - startDateTime));
 
+            DateTime startDateTimeThread = DateTime.Now;
+            employeePayrollUsingThreads.addEmployeeToPayrollWithThread(employeeDetails);
+            DateTime stopDateTimeThread = DateTime.Now;
+            Console.WriteLine("Duration with thread: " + (stopDateTimeThread - startDateTimeThread));
 
         }
 
